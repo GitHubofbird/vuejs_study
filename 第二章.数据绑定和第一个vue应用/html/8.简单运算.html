@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{}}简单运算</title>
+  <script src="../../js/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <p>{{n*9}}</p>
+    <p>{{ok? '确定':'取消'}}</p>
+    <p>{{text.split(',').reverse().join(',')}}</p>
+  </div>
+</body>
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      n: 14,
+      ok: true,
+      text: '123,456'
+    }
+  })
+</script>
+
+</html>

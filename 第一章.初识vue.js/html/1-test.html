@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>初始</title>
+  <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="book in books">{{book.name}}</li>
+    </ul>
+  </div>
+</body>
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      books: [
+        { name: '《vue.js实战》' },
+        { name: '《JavaScript语言精粹》' },
+        { name: '《JavaScript高级程序设计》' }
+      ]
+    }
+  })
+</script>
+
+</html>

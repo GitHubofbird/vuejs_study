@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>判断指令</title>
+  <script src="../../js/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <template v-if="status === 1">
+      <p>这是一段文本</p>
+      <p>这是一段文本</p>
+      <p>这是一段文本</p>
+      <p>这是一段文本</p>
+    </template>
+  </div>
+</body>
+<script>
+  var app = new Vue({
+
+    el: '#app',
+    data: {
+      status: 1
+    }
+  })
+</script>
+
+</html>

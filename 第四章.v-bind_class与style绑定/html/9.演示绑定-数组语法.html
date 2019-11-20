@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>样式绑定-数组语法</title>
+  <script src="../../js/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <p :style="[styleA,styleB,styleC]">多样式绑定</p>
+  </div>
+</body>
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      styleA: {
+        display: 'inline-block',
+        backgroundColor: 'skyblue',
+        color: '#fff'
+      },
+      styleB: {
+        width: '200px',
+        lineHeight: '50px',
+        textAlign: 'center'
+      },
+      styleC: {
+        margin: '0 auto'
+      }
+    }
+  })
+</script>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v-bind</title>
+  <script src="../../js/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <img v-bind:src="imgUrl">
+    <a v-bind:href="url"> 百度一下</a>
+    <!-- 简写为 -->
+    <img src="" :src="imgUrl" alt="">
+    <a :href="url"> 百度一下</a>
+  </div>
+</body>
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      imgUrl: '../../images/mvvm.png',
+      url: 'https://www.baidu.com'
+    }
+  })
+</script>
+
+</html>

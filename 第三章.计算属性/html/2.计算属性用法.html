@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>计算属性用法</title>
+  <script src="../../js/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    总价:{{price}}
+  </div>
+</body>
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      package1: [{
+        name: 'iphone 7',
+        price: 7199,
+        count: 2
+      },
+      {
+        name: 'ipad',
+        price: 2888,
+        count: 1
+      }
+      ],
+      package2: [{
+        name: 'apple',
+        price: 3,
+        count: 5
+      },
+      {
+        name: 'banana',
+        price: 2,
+        count: 10
+      }]
+    },
+    computed: {
+      price: function () {
+        let price = 0;
+        for (let i = 0; i < this.package1.length; i++) {
+          price += this.package1[i].price * this.package1[i].count
+        }
+        for (let i = 0; i < this.package2.length; i++) {
+          price += this.package2[i].price * this.package2[i].count
+        }
+        return price;
+      }
+    },
+  })
+</script>
+
+</html>
