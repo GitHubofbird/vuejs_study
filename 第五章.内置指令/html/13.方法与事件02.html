@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>方法与事件02</title>
+  <script src="../../js/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <p>点击次数:{{counter}}</p>
+    <button @click="handAdd()">+1</button>
+    <button @click="handAdd(10)">+10</button>
+  </div>
+</body>
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      counter: 0
+    },
+    methods: {
+      handAdd: function (num) {
+        num = num || 1
+        console.log(num);
+
+        this.counter += num
+      }
+    },
+  })
+</script>
+
+</html>
