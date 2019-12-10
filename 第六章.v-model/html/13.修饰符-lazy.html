@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>修饰符-lazy</title>
+</head>
+<script src="../../js/vue.js"></script>
+
+<body>
+  <div id="app">
+    <input type="text" v-model.lazy="message">
+    <!-- 此时的message并不是实时更新的,而是在失去焦点或回车后才更新的 -->
+    <p>{{message}}</p>
+  </div>
+</body>
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      message: ''
+    }
+  })
+</script>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>radio互斥效果</title>
+</head>
+<script src="../../js/vue.js"></script>
+
+<body>
+  <div id="app">
+    <input type="radio" name="" v-model="picked" value="Vue" id="vue">
+    <label for="vue">Vue</label>
+    <input type="radio" name="" v-model="picked" value="js" id="js">
+    <label for="js">JavaScript</label>
+    <input type="radio" name="" v-model="picked" value="CSS" id="css">
+    <label for="css">CSS</label>
+    <p>你的选项是:{{picked}}</p>
+  </div>
+</body>
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      picked: 'js'
+    }
+  })
+</script>
+
+</html>

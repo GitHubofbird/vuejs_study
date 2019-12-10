@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v0-model基本用法</title>
+</head>
+<script src="../../js/vue.js"></script>
+
+<body>
+  <div id="app">
+    <input type="text" v-model="message">
+    <span>输入的内容:{{message}}</span>
+  </div>
+</body>
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      message: ''
+    }
+  })
+</script>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v-model&textarea</title>
+</head>
+<script src="../../js/vue.js"></script>
+
+<body>
+  <div id="app">
+    <textarea name="" id="" cols="30" rows="10" v-model="text" placeholder="输入..."></textarea>
+    <p>输入内容是:</p>
+    <p style="white-space:pre">{{text}}</p>
+
+  </div>
+</body>
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      text: ''
+    }
+  })
+</script>
+
+</html>

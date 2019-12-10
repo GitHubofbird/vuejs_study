@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>@input</title>
+</head>
+<script src="../../js/vue.js"></script>
+
+<body>
+  <div id="app">
+    <input type="text" @input="handleInput" placeholder="输入..">
+    <p>输入逇内容是:{{message}}</p>
+  </div>
+</body>
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      message: ''
+    },
+    methods: {
+      handleInput: function (e) {
+        this.message = e.target.value
+      }
+    },
+  })
+</script>
+
+
+
+</html>

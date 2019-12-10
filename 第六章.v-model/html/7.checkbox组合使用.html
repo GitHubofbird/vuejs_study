@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>checkbox组合使用</title>
+</head>
+<script src="../../js/vue.js"></script>
+
+<body>
+  <div id="app">
+    <input type="checkbox" name="" v-model="checked" value="vue" id="vue">
+    <label for="vue">Vue</label>
+    <input type="checkbox" name="" v-model="checked" value="js" id="js">
+    <label for="js">JavaScript</label>
+    <input type="checkbox" name="" v-model="checked" value="css" id="css">
+    <label for="css">CSS</label>
+    <p>你的选项是:{{checked}}</p>
+  </div>
+</body>
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      checked: ['css', 'js']
+    }
+  })
+</script>
+
+</html>
