@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>数据验证</title>
+		<script src="../../../js/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<my-component :prop-a="123" :prop-d="666"></my-component>
+		</div>
+	</body>
+	<script>
+		Vue.component('my-component',{
+			props:{
+				//必须是数字
+				propA:Number,
+				//必须是数字或字符串
+				propB:[String,Number],
+				//布尔值,如果没有定义,默认值是true
+				propC:{
+					type:Boolean,
+					default:true
+				},
+				//数字,并且必须是必传
+				propD:{
+					type:Number,
+					required:true
+				},
+				//如果是数组或对象,默认值必须是一个而函数来返回
+				propE:{
+					type:Array,
+					default:function(){
+						return []
+					}
+				},
+				//自定义一个验证函数
+				propF:{
+					validator:function(value){
+						return value>10
+					}
+				}
+				
+			},
+			template:'<div>{{propA}}:{{propD}}</div>'
+		})
+		var app =new Vue({
+			el:'#app',
+		})
+	</script>
+</html>

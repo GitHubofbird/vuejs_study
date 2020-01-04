@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>组件demo1</title>
+  <link rel="stylesheet" type="text/css" href="http://unpkg.com/view-design/dist/styles/iview.css">
+  <script type="text/javascript" src="http://vuejs.org/js/vue.min.js"></script>
+  <script type="text/javascript" src="http://unpkg.com/view-design/dist/iview.min.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <template>
+      <Card style="width: 500px;">
+        <p slot="title">与XXX聊天中...</p>
+        <a href="#" slot="extra">
+          <Icon type="ios-close" size="18" />
+        </a>
+        <div style="height: 100px;"></div>
+        <div>
+          <Row :gutter="16" index="">
+            <i-col span="17">
+              <i-input v-model="value" placeholder="请输入..."></i-input>
+            </i-col>
+            <i-col span="4">
+              <i-button type="primary" icon="ios-paper-plane">
+                发送
+              </i-button>
+            </i-col>
+          </Row>
+        </div>
+      </Card>
+    </template>
+  </div>
+</body>
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      value: ''
+    }
+  })
+</script>
+
+</html>

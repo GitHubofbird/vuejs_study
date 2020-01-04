@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>通过父链直接修改数据</title>
+		<script src="../../../js/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<p>{{message}}</p>
+			<my-component></my-component>
+		</div>
+	</body>
+	<script>
+		Vue.component('my-component',{
+			template:'<button @click="handleChange">通过父链修改父组件数据</button>',
+			methods:{
+				handleChange:function(){
+					this.$parent.message="来自子组件的数据"
+				}
+			}			
+		})
+		var app = new Vue({
+			el:'#app',
+			data:{
+				message:''
+			}
+		})
+	</script>
+</html>

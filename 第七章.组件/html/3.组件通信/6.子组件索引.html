@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>子组件索引</title>
+		<script src="../../../js/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<button @click="handleRef">通过ref获取子组件实例</button>
+			<my-component ref="comA"></my-component>
+		</div>
+	</body>
+	<script>
+		Vue.component('my-component',{
+			template:'<div>子组件</div>',
+			data:function(){
+				return{
+					message:'自组件内容'
+				}
+			}
+		})
+		
+		var app = new Vue({
+			el:'#app',
+			methods:{
+				handleRef:function(){
+				//通过ref来获取指定ref实例
+				var msg = this.$refs.comA.message
+				console.log(msg)
+			}}
+		})
+	</script>
+</html>

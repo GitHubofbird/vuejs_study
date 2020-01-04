@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>props数据正向传递</title>
+		<script src="../../../js/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<my-component message="来自父组件的数据"></my-component>
+		</div>
+	</body>
+	<script>
+		Vue.component('my-component',{
+			props:['message'],
+			template:'<div>{{message}}</div>'
+		})
+		var app = new Vue({
+			el:'#app',
+			
+		})
+	</script>
+</html>

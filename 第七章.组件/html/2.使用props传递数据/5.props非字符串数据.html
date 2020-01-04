@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>props非字符串数据</title>
+		<script src="../../../js/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<my-component message="[1,2,3]"></my-component>
+			<my-component :message="[1,2,3]"></my-component>
+		</div>
+	</body>
+	<script>
+		Vue.component('my-component',{
+			props:['message'],
+			template:'<div>{{message.length}}</div>'
+		})
+		var app = new Vue({
+			el:'#app'
+		})
+	</script>
+</html>
