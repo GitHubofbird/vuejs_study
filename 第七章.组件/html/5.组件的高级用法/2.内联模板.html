@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>内联模板</title>
+		<script src="../../../js/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<child-component inline-template>
+				<div>
+					<h2>在父组件中定义子组件的模板</h2>
+					<p>{{m}}</p>
+					<p>{{msg}}</p>
+				</div>
+			</child-component>			
+		</div>
+	</body>
+	<script>
+		Vue.component('child-component',{
+			data:function(){
+				return{
+					msg:'在子组件中声明的数据'					
+				}
+			}
+		})
+		var app = new Vue({
+			el:'#app',
+			data:{
+				m:'在父组件中声明的数据'
+			}
+		})
+	</script>
+</html>

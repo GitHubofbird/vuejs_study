@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>作用域</title>
+		<script src="../../../js/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<children-component v-show="showChild"></children-component>
+		</div>
+	</body>
+	<script>
+		Vue.component('children-component',{
+			template:'<div>子组件</div>',
+			
+		})
+		var app = new Vue({
+			el:'#app',
+			data:{
+				showChild:true
+			}
+		})
+	</script>
+</html>

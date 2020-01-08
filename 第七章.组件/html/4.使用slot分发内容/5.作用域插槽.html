@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>作用域插槽</title>
+		<script src="../../../js/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<child-component>
+				<template scope="props">
+					<p>来自父组件的内容</p>
+					<p>{{props.msg}}</p>
+				</template>
+			</child-component>
+		</div>
+	</body>
+	<script>
+		Vue.component('child-component',{
+			template:`<div>
+						<slot msg="来自子组件的内容"></slot>
+					  </div>`
+		})
+		var app = new Vue({
+			el:'#app'
+		})
+	</script>
+</html>
