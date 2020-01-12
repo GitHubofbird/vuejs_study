@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>全局注册-test</title>
+		<script src="../../js/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" v-focus>
+		</div>
+	</body>
+	<script>
+		Vue.directive('focus',{
+			inserted:function(el){
+				el.focus()
+			}
+		})
+		var app = new Vue({
+			el:'#app'
+		})
+	</script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>全局注册-钩子函数示例:多个值</title>
+		<script src="../../js/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<div v-test="{msg:'hello',name:'Tom'}"></div>
+		</div>
+	</body>
+	<script>
+		Vue.directive('test',{
+			bind:function(el,binding,vnode){
+				console.log(binding.value.msg)
+				console.log(binding.value.name)
+				console.log(binding.arg)
+			}
+		})
+		var app = new Vue({
+			el:'#app'
+		})
+	</script>
+</html>

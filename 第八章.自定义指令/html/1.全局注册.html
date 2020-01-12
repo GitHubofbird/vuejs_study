@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>自定义指令-全局注册</title>
+  <script src="../../js/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+	
+  </div>
+</body>
+<script>
+	//全局注册指令
+	Vue.directive('focus',{
+		//指令选项		
+	})
+	// 局部注册指令
+	var app =  new Vue({
+		el:'#app',
+		directives:{
+			focus:{
+				//指令选项
+			}
+		}
+	})
+</script>
+
+</html>
