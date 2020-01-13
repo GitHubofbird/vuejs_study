@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>问卷调查</title>
+		<link rel="stylesheet" type="text/css" href="./style.css" />
+		<script src="../js/vue.js"></script>
+	</head>
+	<body>
+		<div id="app" v-cloak>
+			<div class="question-1 question" v-if="page == 1">
+				<p>1.请问你的性别是:</p>
+				<input type="radio" name="boy" id="boy"><label for="boy">男</label>
+				<input type="radio" name="girl" id="girl"><label for="girl">女</label>
+				<input type="radio" name="secret" id="secret"><label for="secret">保密</label><br>
+				<page-button @next="getPage" @back="getPage"></page-button>
+			</div>
+			<div class="question-2 question" v-if="page == 2">
+				<p>2.请选择你的兴趣爱好:</p>				
+				<input name="Checkbox" type="checkbox" />
+				<label>看书</label><br>				
+				<input name="Checkbox" type="checkbox" />
+				<label>游泳</label><br>				
+				<input name="Checkbox" type="checkbox" />
+				<label>跑步</label><br>				
+				<input name="Checkbox" type="checkbox" />
+				<label>看电影</label><br>				
+				<input name="Checkbox" type="checkbox" />
+				<label>听音乐</label><br>			
+				<page-button  @next="getPage" @back="getPage"></page-button>
+			</div>
+			<div class="question-3 question" v-if="page == 3">
+				<p>3.请问你的性别是:</p>
+				<textarea rows="6" cols="50" placeholder="不少于100字">
+				</textarea><br>			
+				<page-button  @next="getPage" @back="getPage"></page-button>
+			</div>			
+		</div>
+		<script src="./button.js"></script>
+		<script src="./reset.js"></script>
+		<script src="./index.js"></script>
+		
+	</body>
+</html>
