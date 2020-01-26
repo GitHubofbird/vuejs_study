@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>demo2-Render</title>
+		<script src="../../js/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<anthor :level="2" title="a">特性</anthor>
+			
+		</div>
+	</body>
+	<script>
+		Vue.component('anthor',{
+			props:{
+				level:{
+					type:Number,
+					required:true
+				},
+				title:{
+					type:String,
+					default:''
+				}
+			},
+			render:function(createElement){
+				return createElement(
+					'h'+this.level,
+					[
+						createElement(
+							'a',
+							{
+								domProps:{
+									href:'#'+this.title
+								}
+							},
+							this.$slots.default
+						)
+					]
+				)
+				
+			}
+		});
+		var app = new Vue({
+			el:'#app'
+		})
+	</script>
+</html>

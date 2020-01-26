@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>render函数约束_有多个含有组件的slot</title>
+  <script src="../../js/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <ele>
+      <div>
+        <child></child>
+      </div>
+    </ele>
+  </div>
+</body>
+<script>
+  Vue.component('child', {
+    render: function (createElement) {
+      return createElement('p', 'text')
+    }
+  });
+  Vue.component('ele', {
+    render: function (createElement) {
+      return createElement('div', [
+        this.$slots.default,
+        this.$slots.default
+      ]);
+    }
+  })
+  var app = new Vue({
+    el: '#app'
+  });
+</script>
+
+</html>

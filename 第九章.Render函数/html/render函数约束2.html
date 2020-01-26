@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>render函数约束--利用render函数一次渲染多个组件</title>
+  <script src="../../js/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <ele></ele>
+  </div>
+</body>
+<script>
+  var child = {
+    render: function (createElement) {
+      return createElement('p', 'text');
+    }
+
+  }
+  Vue.component('ele', {
+    render: function (createElement) {
+      return createElement('div',
+        Array.apply(null, { length: 5 }).map(function () {
+          return createElement(child)
+        })
+      );
+    }
+  })
+  var app = new Vue({
+    el: '#app'
+  })
+</script>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>如果Vnode是组件或含有组件的slot,那么Vnode必须唯一___有多个VNode</title>
+  <script src="../../js/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <ele></ele>
+  </div>
+</body>
+<script>
+  var child = {
+    render: function (createElement) {
+      return createElement('p', 'text');
+    }
+  }
+  Vue.component('ele', {
+    render: function (createElement) {
+      var childNode = createElement(child);
+      return createElement('div',
+        [
+          childNode,
+          childNode
+        ]
+      );
+    }
+  });
+  var app = new Vue({
+    el: '#app'
+  })
+</script>
+
+</html>
