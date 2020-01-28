@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JavaScript代替模板功能_v-model</title>
+  <script src="../../js/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <ele></ele>
+  </div>
+</body>
+<script>
+  Vue.component('ele', {
+    render(createElement) {
+      var _this = this;
+      return createElement(
+        'div',
+        [
+          createElement('input', {
+            domProps: {
+              value: _this.value
+            },
+            on: {
+              input: function (event) { _this.value = event.target.value }
+            }
+          }),
+          createElement('p', 'value:' + this.value)
+        ]
+      )
+    },
+    data() {
+      return {
+        value: ''
+      }
+    },
+  })
+  var app = new Vue({
+    el: '#app',
+  })
+</script>
+
+</html>

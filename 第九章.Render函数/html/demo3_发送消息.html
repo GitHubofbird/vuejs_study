@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>发送消息案例</title>
+  <script src="../../js/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <ele></ele>
+  </div>
+</body>
+<script>
+  Vue.component('ele', {
+    render(createElement) {
+      var _this = this
+      if (this.msgs.length) {
+        var msgNode = createElement('ul', {
+          style: {
+            width: '400px',
+            height: '300px',
+            margin: '0 auto',
+            listStyle: 'none',
+          }
+        }, this.msgs.map(function (item) {
+          return createElement('li', item);
+        }))
+      } else {
+        var msgNode = createElement('p', {
+          style: {
+            width: '400px',
+            height: '300px',
+            margin: '0 auto'
+          }
+        }, '暂无聊天内容...')
+      }
+      return createElement('div', [
+        msgNode,
+        createElement('br'),
+        createElement('input', {
+          atttr: {
+            placeholder: '请输入聊天内容...'
+          },
+          style: {
+            width: '400px',
+            height: '50px'
+          },
+          on: {
+            keyup: function (event) {
+              if (event.keyCode !== 13) {
+                return;
+              }
+              _this.msgs.push(event.target.value)
+              event.target.value = '';
+            }
+          }
+        })
+      ])
+    },
+    data() {
+      return {
+        msgs: []
+      }
+    },
+  })
+  var app = new Vue({
+    el: '#app'
+  })
+</script>
+
+</html>
