@@ -16,12 +16,12 @@
   var app = new Vue({
     el: '#app',
     data: {
-      date: new Date()
+      date: new Date(),	 
     },
     mounted() {
       let _this = this
       this.timer = setInterval(function () {
-        _this.date = new Date();
+        _this.date = new Date().getSeconds();
       }, 1000)
     },
     beforeDestroy() {
